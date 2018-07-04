@@ -14,9 +14,11 @@ client = connections.Elasticsearch(["http://localhost:9200/"])
 #Response object allows you access to any key from the response dictionary via attribute access
 
 '''
-LIBRARY EXAMPLES:
+LIBRARIES AND EXAMPLES:
 https://grimoirelab.gitbooks.io/tutorial/content/python/elasticsearch-dsl.html
 http://elasticsearch-dsl.readthedocs.io/en/latest/search_dsl.html
+https://github.com/elastic/elasticsearch-dsl-py
+https://www.freshconsulting.com/how-to-create-a-fuzzy-search-as-you-type-feature-with-elasticsearch-and-django/
 '''
 
 #Search return response dictionary with all data from ES
@@ -26,9 +28,11 @@ def search_nested_dict(company_name):
     search_result = response.to_dict()
     return search_result
 #Search return response dictionary with specific values
+
+
 def search(company_name):
     search_result = dict()
-    request = Search().using(client).filter("match", COMPANY_NAME=company_name)
+    request = Search().using(client).query("match", COMPANY_NAME=company_name)
     response = request.execute()
     for hit in response:
         if 'meta.id' in hit:

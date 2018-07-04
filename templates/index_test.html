@@ -88,44 +88,6 @@
     </div>
 </div>
 
-        <div class="alert alert-dark" role="alert">
-            <span style="font-size:30px;">Company details</span> <span style="font-size:15px;">by <a href="http://UtechData.Com" target="_blank">UtechData.Com</a></span>
-        </div>
-
-        <div class="list-group">
-            <div class="list-group-item list-group-item-primary">
-                <div class="row">
-                    <div class="col-md-3">
-                        <label>Company Name</label>
-                    </div>
-                    <div class="col-md-3">
-                        <label>Email Address</label>
-                    </div>
-                    <div class="col-md-3">
-                        <label>State</label>
-                    </div>
-                    <div class="col-md-3">
-                        <label>Phone Number</label>
-                    </div>
-                </div>
-            </div>
-            <div class="list-group-item list-group-item-{% if coin.percent_change_1h.0 == '-'%}danger{% else %}success{% endif %}">
-                <div class="row">
-                    <div class="col-md-3">
-                        {{ company_name }}
-                    </div>
-                    <div class="col-md-3">
-                        {{email_address}}
-                    </div>
-                    <div class="col-md-3">
-                        {{state}}
-                    </div>
-                    <div class="col-md-3">
-                        {{phone_number}}
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
     <!-- Page Footer-->
